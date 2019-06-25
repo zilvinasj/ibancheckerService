@@ -1,0 +1,10 @@
+{
+    "infos": null,
+    "errors": [
+        {
+            "code": "Could not deserialize request",
+            "description": "Request method 'GET' not supported"
+        }
+    ],
+    "results": null
+}
