@@ -79,14 +79,11 @@ public class IbancheckerServiceApplicationTests
         String result = mockMvc
                 .perform(post("/ibanValidation").contentType(MediaType.APPLICATION_JSON)
                         .content(TestUtils.getSamplesJsonString("requestBad.json")))
-                .andExpect(status().is4xxClientError()).andReturn().getResponse().getContentAsString();
+                .andExpect(status().is5xxServerError()).andReturn().getResponse().getContentAsString();
         Response response = objectMapper.readValue(result, Response.class);
         assertNotNull(response.getErrors());
         assertNull(response.getInfos());
         assertNull(response.getResults());
-        Response expected = TestUtils.getSamplesJsonBean("responseWrongMethod.json", Response.class);
-        assertEquals(expected.getErrors().get(0).getCode(), response.getErrors().get(0).getCode());
-        assertEquals(expected.getErrors().get(0).getDescription(), response.getErrors().get(0).getDescription());
 
     }
 
