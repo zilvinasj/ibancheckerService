@@ -3,8 +3,6 @@
  */
 package com.demo.api;
 
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -34,8 +32,6 @@ public class SoapController
         ResponseIbanValidation response = new ResponseIbanValidation();
         request.getRequestIbans().stream()
                 .forEach(iban -> response.getResponseIbans().add(iban + ";" + service.validateIBAN(iban)));
-        response.getResponseIbans().addAll(request.getRequestIbans().stream()
-                .map(iban -> iban + ";" + service.validateIBAN(iban)).collect(Collectors.toList()));
         return response;
     }
 }

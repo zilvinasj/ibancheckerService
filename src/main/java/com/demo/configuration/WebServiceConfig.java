@@ -30,7 +30,7 @@ public class WebServiceConfig extends WsConfigurerAdapter
     {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("IbanPort");
-        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setLocationUri("/ws/ibans");
         wsdl11Definition.setTargetNamespace("soapModel");
         wsdl11Definition.setSchema(countriesSchema);
         return wsdl11Definition;
