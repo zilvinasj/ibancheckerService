@@ -2,7 +2,13 @@
     "infos": null,
     "errors": null,
     "results": [
-        "AA051245445454552117989;false",
-        "LT647044001231465456;true"
+        {
+            "iban": "AA051245445454552117989",
+            "valid": false
+        },
+        {
+            "iban": "LT647044001231465456",
+            "valid": true
+        }
     ]
 }
